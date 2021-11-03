@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script>
+    // load Branch
+    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
+    // init Branch
+    branch.init('key_live_fb4e2zSYaRL6L4dTaqnkXagdzqcE3ETB');
+  </script>
+
+
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+</head>
+<body>
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+  <button id="myBtn" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<a href="https://embibe-student.app.link/e/Z2AbS2KySkb">Embibe Test Link</a>
+
+
+<script>
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("myBtn").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction() {
+
+// var event_and_custom_data = {
+//    "transaction_id": "tras_Id_1232343434",
+//    "currency": "USD",
+//    "revenue": 180.2,
+//    "shipping": 10.5,
+//    "tax": 13.5,
+//    "coupon": "promo-1234",
+//    "affiliation": "high_fi",
+//    "description": "Preferred purchase",
+//    "purchase_loc": "Palo Alto",
+//    "store_pickup": "unavailable"
+// };
+
+
+// branch.logEvent(
+//     'custom_event_name',
+//     event_and_custom_data,
+//     function(err) { console.log(err); }
+// );
+
+
+
+
+var custom_data = {
+
+            "paymentAmount": '100',
+
+         };
+
+         //@ts-ignore
+
+         const branch = window?.branch;
+
+         if (typeof branch !== 'undefined') {
+
+         branch.logEvent(
+
+             "PAYMENT_COMPLETE",
+
+             custom_data,
+
+             function (err) {
+
+                 console.log(err);
+
+             }
+
+         );
+
+         }
+
+
+
+}
+</script>
+
+</body>
+</html>
